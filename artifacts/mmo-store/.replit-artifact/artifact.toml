@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "MMO Store"
+version = "1.0.0"
+id = "artifacts/mmo-store"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24457
+
+[services.development]
+run = "pnpm --filter @workspace/mmo-store run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mmo-store", "run", "build" ]
+publicDir = "artifacts/mmo-store/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24457"
+BASE_PATH = "/"

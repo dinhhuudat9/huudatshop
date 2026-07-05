@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "hQEHPX0AP7MRUxNzWmxPQ"
+uri = "file://mmo-store-project.zip"
+type = "unspecified"
+title = "MMO Store - Full Project (34 MB)"
